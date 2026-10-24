@@ -1,0 +1,1001 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18400991908"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'AW-18400991908');
+</script>
+</script>
+</script>
+</script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title>kalro farm Livestock Marketplace</title>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com"></script>
+
+<!-- FLOATING BUTTONS CONTAINER -->
+<div class="fixed bottom-6 right-6 flex flex-col gap-4 z-50">
+
+  <!-- WHATSAPP BUTTON -->
+  <a
+    href="https://wa.me/254762886726?text=Hello%20Kalro%20Farm,%20I%20am%20interested%20in%20this%20livestock."
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Chat on WhatsApp"
+    class="bg-green-500 hover:bg-green-600 text-white p-5 rounded-full shadow-2xl transition duration-300 flex items-center justify-center"
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="32"
+      height="32"
+      fill="currentColor"
+      viewBox="0 0 16 16"
+    >
+      <path d="M13.601 2.326A7.854 7.854 0 0 0 8.002 0C3.58 0 0 3.58 0 8a7.94 7.94 0 0 0 1.146 4.106L0 16l4.025-1.122A7.944 7.944 0 0 0 8.002 16C12.42 16 16 12.42 16 8a7.94 7.94 0 0 0-2.399-5.674zM8.002 14.5a6.48 6.48 0 0 1-3.302-.902l-.236-.14-2.388.665.637-2.328-.154-.239A6.48 6.48 0 0 1 1.5 8c0-3.59 2.912-6.5 6.502-6.5a6.46 6.46 0 0 1 4.6 1.903A6.46 6.46 0 0 1 14.5 8c0 3.59-2.91 6.5-6.498 6.5zm3.63-4.867c-.198-.1-1.172-.578-1.354-.644-.181-.066-.313-.1-.445.1-.132.198-.511.644-.627.776-.115.132-.231.148-.429.05-.198-.1-.836-.308-1.592-.981-.588-.524-.985-1.172-1.1-1.37-.116-.198-.012-.305.087-.404.09-.09.198-.231.297-.347.099-.116.132-.198.198-.33.066-.132.033-.248-.017-.347-.05-.099-.445-1.074-.61-1.47-.161-.387-.325-.334-.445-.34l-.38-.007c-.132 0-.347.05-.528.248-.181.198-.693.677-.693 1.652 0 .974.71 1.916.809 2.048.099.132 1.397 2.134 3.386 2.992.473.204.842.326 1.13.417.475.151.907.13 1.249.079.381-.057 1.172-.479 1.337-.942.165-.462.165-.859.116-.942-.05-.083-.182-.132-.38-.231z"/>
+    </svg>
+  </a>
+
+  <!-- CALL BUTTON BELOW -->
+  <a
+    href="tel:+254762886726"
+    aria-label="Call Kalro Farm"
+    class="bg-blue-600 hover:bg-blue-700 text-white p-4 rounded-full shadow-2xl transition duration-300 flex items-center justify-center"
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      class="w-8 h-8"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke="currentColor"
+      stroke-width="2.5"
+    >
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        d="M3 5a2 2 0 012-2h2.28a1 1 0 01.948.684l1.2 3.6a1 1 0 01-.502 1.21l-1.7.85a11.042 11.042 0 005.657 5.657l.85-1.7a1 1 0 011.21-.502l3.6 1.2a1 1 0 01.684.948V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+      />
+    </svg>
+  </a>
+
+</div>
+  <style>
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: #f7f6f2;
+      color: #1f2937;
+      font-family: Arial, sans-serif;
+    }
+
+    .hero-section {
+      background-image: url('https://images.unsplash.com/photo-1500595046743-cd271d694d30');
+      background-size: cover;
+      background-position: center;
+    }
+
+    .filter-btn {
+      padding: 10px 20px;
+      border-radius: 10px;
+      background: white;
+      font-weight: bold;
+      border: 2px solid #166534;
+      transition: 0.3s;
+    }
+
+    .filter-btn:hover {
+      background: #166534;
+      color: white;
+    }
+
+    .filter-btn.active {
+      background: #166534;
+      color: white;
+    }
+
+    .animal-card {
+      transition: 0.3s;
+    }
+
+    .animal-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .gallery-image {
+      transition: 0.3s;
+    }
+
+    .gallery-image:hover {
+      transform: scale(1.05);
+    }
+
+ /* =========================
+   SECTION
+========================= */
+.why-choose {
+    padding: 80px 20px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.why-choose h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #1b5e20;
+    margin-bottom: 50px;
+}
+
+/* =========================
+   GRID
+========================= */
+.choose-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+/* =========================
+   BLOCK
+========================= */
+.choose-block {
+    background: #ffffff;
+    padding: 40px 25px;
+    text-align: center;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    transition: 0.3s ease;
+}
+
+.choose-block:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+}
+
+/* =========================
+   ICON (GREEN THEME ONLY)
+========================= */
+.choose-icon {
+    margin: 0 auto 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* If using Boxicons */
+.choose-icon i {
+    font-size: 50px;
+    color: #2e7d32; /* green icon color */
+}
+
+/* If using emojis */
+.choose-icon {
+    font-size: 40px;
+    line-height: 1;
+    color: #2e7d32;
+}
+/* =========================
+   TEXT
+========================= */
+.choose-block h3 {
+    font-size: 1.4rem;
+    color: #1b5e20;
+    margin-bottom: 12px;
+}
+
+.choose-block p {
+    color: #666;
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+/* =========================
+   MOBILE
+========================= */
+@media (max-width: 768px) {
+    .why-choose h2 {
+        font-size: 2rem;
+    }
+}
+
+    /* Match the existing livestock card styling */
+    #farm-products .animal-card { transition: 0.3s; }
+    #farm-products .animal-card:hover { transform: translateY(-5px); }
+    #farm-products .product-image-wrap { height: 18rem; min-height: 18rem; }
+    #farm-products .product-image { display: block; height: 18rem; object-fit: cover; }
+    #farm-products .product-image-fallback { height: 18rem; }
+  </style>
+</head>
+ <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18400991908"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'AW-18400991908');
+</script>
+</script>
+</script>
+
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="bg-green-900 text-white shadow-lg sticky top-0 z-50">
+
+    <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+
+      <h1 class="text-3xl font-bold">
+        kalro farm
+      </h1>
+
+      <div class="space-x-6 text-lg">
+        <a href="#home" class="hover:text-yellow-300">Home</a>
+        <a href="#livestock" class="hover:text-yellow-300">Livestock</a>
+        <a href="#farm-products" class="hover:text-yellow-300">Farm Products</a>
+        <a href="#about" class="hover:text-yellow-300">About</a>
+        <a href="#contact" class="hover:text-yellow-300">Contact</a>
+      </div>
+
+    </div>
+
+  </nav>
+
+  <!-- HERO -->
+<section id="home" class="hero-section text-white">
+
+  <div class="bg-black/60 min-h-[90vh] flex items-center">
+
+    <div class="max-w-7xl mx-auto px-6">
+
+      <h2 class="text-5xl md:text-7xl font-bold mb-6 leading-tight">
+        Quality You Can Trust
+      </h2>
+
+      <p style="margin: 20px;">
+        Kalro Farm is your trusted source for premium Kalro products, well-bred healthy livestock, and quality farm supplies in Naivasha, Kenya.
+      </p>
+
+      <!-- ACTION BUTTONS -->
+      <div style="display:flex; gap:15px; width: 100%; flex-wrap:wrap; margin-top:20px;">
+
+      <div style="display:flex; gap:15px; width:100%; flex-wrap:wrap; margin-top:20px;">
+
+    <div style="width:100%;">
+
+        <!-- CALL NOW -->
+        <a href="tel:+254762886726"
+           style="
+           background:#22c55e;
+           color:#fff;
+           padding:16px 20px;
+           border-radius:10px;
+           font-weight:bold;
+           text-decoration:none;
+           display:block;
+           width:100%;
+           box-sizing:border-box;
+           margin-bottom:15px;
+           text-align:center;">
+         Call Now: 0762886726
+        </a>
+
+        <!-- WHATSAPP ORDER -->
+        <a href="https://wa.me/254762886726?text=Hello%20I%20want%20to%20make%20an%20order"
+           target="_blank"
+           style="
+           background:#f5b000;
+           color:#000;
+           padding:16px 20px;
+           border-radius:10px;
+           font-weight:bold;
+           text-decoration:none;
+           display:block;
+           width:100%;
+           box-sizing:border-box;
+           text-align:center;">
+         
+         WhatsApp Order
+        </a>
+
+    </div>
+
+</div>
+      </div>
+
+
+
+    </div>
+
+  </div>
+
+</section>
+  <!-- FEATURES -->
+
+<section class="why-choose">
+  
+    <div class="containers">
+
+        <h2>🌿 Why Choose Kalro Farm?</h2>
+
+        <div class="choose-grid">
+
+            <!-- High Quality -->
+            <div class="choose-block">
+                <div class="choose-icon">🌱</div>
+                <h3>High Quality</h3>
+                <p>Premium genetics and health standards for all livestock.</p>
+            </div>
+
+            <!-- Free Delivery -->
+            <div class="choose-block">
+                <div class="choose-icon">🚚</div>
+                <h3>Free Delivery</h3>
+                <p>Countrywide delivery arranged upon agreement.</p>
+            </div>
+
+            <!-- Trusted Source -->
+            <div class="choose-block">
+                <div class="choose-icon">✔️</div>
+                <h3>Trusted Source</h3>
+                <p>Established name in Kenya farming with a proven track record.</p>
+            </div>
+
+        </div>
+
+</section>
+  
+  <!-- LIVESTOCK -->
+  <section id="livestock" class="py-20 bg-[#eeede7]">
+
+    <div class="max-w-7xl mx-auto px-6">
+
+      <div class="text-center mb-12">
+
+        <h2 class="text-5xl font-bold text-green-900 mb-4">
+          Available Livestock
+        </h2>
+
+        <p class="text-lg text-gray-600">
+          Browse our premium livestock collection
+        </p>
+
+      </div>
+
+      <!-- FILTER BUTTONS -->
+      <div class="flex flex-wrap justify-center gap-4 mb-12">
+
+        <button class="filter-btn active" data-filter="all">
+          All
+        </button>
+
+        <button class="filter-btn" data-filter="cattle">
+          Cattle
+        </button>
+
+        <button class="filter-btn" data-filter="goat">
+          Goats
+        </button>
+
+        <button class="filter-btn" data-filter="sheep">
+          Sheep
+        </button>
+
+      </div>
+
+      <!-- GRID -->
+      <div id="livestockGrid"
+        class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- NEW FARM PRODUCTS -->
+  <section id="farm-products" class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-12">
+        <h2 class="text-4xl md:text-5xl font-bold text-green-900 mb-4">Poultry, Fish & Farm Products</h2>
+        <p class="text-lg text-gray-600">Browse our available birds, livestock, seedlings and farm supplies. Prices are in Kenyan shillings (KSh).</p>
+      </div>
+      <div id="farmProductsGrid" class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-7"></div>
+      <p class="text-center text-gray-500 mt-8">Prices may vary by age, size, breed and quantity. Contact us on WhatsApp to confirm availability.</p>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="py-20">
+
+    <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+
+
+      <div>
+
+        <h2 class="text-5xl font-bold text-green-900 mb-6">
+          About kalro farm
+        </h2>
+
+        <p class="text-lg leading-relaxed mb-6">
+          kalro farm connects livestock buyers with trusted breeders
+          offering healthy and premium-quality farm animals.
+        </p>
+
+        <p class="text-lg leading-relaxed">
+          Our mission is to simplify livestock trading while maintaining
+          quality, transparency, and reliability.
+        </p>
+
+      </div>
+<!-- CUSTOMER SERVICE INFO BOX -->
+<div class="max-w-xl mx-auto bg-white shadow-2xl rounded-2xl p-6 border border-gray-200">
+
+  <h2 class="text-2xl font-bold text-green-700 mb-4">
+    KALRO FARM SALES & MARKETING DEPARTMENT ‼️‼️
+  </h2>
+
+  <p class="text-gray-700 mb-4">
+    Thank you for contacting us.
+  </p>
+
+  <div class="space-y-4 text-gray-800">
+
+    <div class="bg-gray-100 p-4 rounded-xl">
+      <span class="font-bold text-green-700">1️⃣ Order Placement</span>
+      <p class="mt-1 text-sm">
+        Reply with <strong>1</strong> for order placement.
+      </p>
+    </div>
+
+    <div class="bg-gray-100 p-4 rounded-xl">
+      <span class="font-bold text-green-700">2️⃣ Returns & Tracking</span>
+      <p class="mt-1 text-sm">
+        Reply with <strong>2</strong> for returns, refunds, and order tracking.
+      </p>
+    </div>
+
+    <div class="bg-gray-100 p-4 rounded-xl">
+      <span class="font-bold text-green-700">3️⃣ Speak to Representative</span>
+      <p class="mt-1 text-sm">
+        Reply with <strong>3</strong> to speak with one of our representatives.
+      </p>
+    </div>
+
+    <div class="bg-gray-100 p-4 rounded-xl">
+      <span class="font-bold text-green-700">4️⃣ Appointment / Gatepass</span>
+      <p class="mt-1 text-sm">
+        Reply with <strong>4</strong> to book for invitation/appointment gatepass
+        <strong>(KSh. 15,500)</strong>.
+      </p>
+
+      <p class="mt-2 text-sm text-red-600 font-medium">
+        NOTE: Redeemable on purchase/refundable. Booking should be made 5 days before the visiting day.
+      </p>
+    </div>
+
+  </div>
+
+  <p class="mt-6 text-gray-600 text-sm">
+    We appreciate your cooperation and look forward to assisting you.
+  </p>
+
+</div>
+    </div>
+            <div class="container">
+      <!-- Left Image -->
+      <div class="image-box">
+        <img src="https://www.delamarefarm.co.ke/assets/farm-supplies-ZJyENUks.jpg" alt="Farm Feeds">
+      </div>
+    
+      <!-- Right Content -->
+      <div class="content">
+        <h1 style="color: darkgreen;">Quality Feeds, Seeds & Fertilizer</h1>
+        <div class="subtitle">
+          Quality animal feeds and seeds delivered to your farm. Based on your
+          productivity needs.
+        </div>
+    
+        <div class="list">
+          <div class="item"><span>Dairy Meal 50kg</span><span class="price">KES 3,200</span></div>
+          <div class="item"><span>Dairy Meal 70kg</span><span class="price">KES 4,200</span></div>
+          <div class="item"><span>Layers Mash</span><span class="price">KES 3,600</span></div>
+          <div class="item"><span>Growers Mash</span><span class="price">KES 3,400</span></div>
+          <div class="item"><span>Chick Mash</span><span class="price">KES 3,800</span></div>
+          <div class="item"><span>Fish Feed 50kg</span><span class="price">KES 4,500</span></div>
+          <div class="item"><span>Dog Meal 20kg</span><span class="price">KES 2,500</span></div>
+          <div class="item"><span>Organic Fertilizer</span><span class="price">KES 2,000</span></div>
+          <div class="item"><span>Hybrid Maize Seeds</span><span class="price">KES 1,800</span></div>
+          <div class="item"><span>Napier Grass Seeds</span><span class="price">KES 1,200</span></div>
+        </div>
+    
+        <div class="button">
+        <a href="https://wa.me/254762457938?text=Hello%20I'm%20interested%20in%20this%20animal" target="_blank" class="whatsapp-btn">
+        💬 Inquire on WhatsApp
+    </a>
+    
+        </div>
+      </div>
+
+
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="py-20 bg-[#eeede7]">
+
+    <div class="max-w-4xl mx-auto px-6">
+
+      <div class="text-center mb-10">
+
+        <h2 class="text-5xl font-bold text-green-900 mb-4">
+          Contact Us
+        </h2>
+
+        <p class="text-lg text-gray-600">
+          Send us your livestock inquiries
+        </p>
+
+      </div>
+
+      <form
+        class="bg-white p-10 rounded-2xl shadow-xl space-y-6">
+
+        <input
+          type="text"
+          placeholder="Your Name"
+          class="w-full border border-gray-300 p-4 rounded-xl">
+
+        <input
+          type="email"
+          placeholder="Email Address"
+          class="w-full border border-gray-300 p-4 rounded-xl">
+
+        <textarea
+          rows="6"
+          placeholder="Your Inquiry"
+          class="w-full border border-gray-300 p-4 rounded-xl"></textarea>
+
+        <button>
+<a
+  href="https://wa.me/254762886726?text=Hello%20Kalro%20Farm%2C%20I%20am%20interested%20in%20your%20livestock%20and%20would%20like%20more%20details."
+  target="_blank"
+  class="bg-green-700 hover:bg-green-600 text-white px-8 py-4 rounded-xl font-bold text-lg inline-block"
+>
+  Send Inquiry on WhatsApp
+</a>
+        </button>
+
+      </form>
+
+    </div>
+
+  </section>
+  
+
+  <!-- FOOTER -->
+  <footer class="bg-green-950 text-white py-10">
+
+    <div class="max-w-7xl mx-auto px-6 text-center">
+
+      <h3 class="text-3xl font-bold mb-4">
+        kalro farm
+      </h3>
+
+      <p class="text-gray-300">
+        Premium livestock marketplace for trusted farming communities.
+      </p>
+
+      <div class="mt-6">
+        © 2026 kalro farm. All rights reserved.
+      </div>
+
+    </div>
+
+  </footer>
+
+  <!-- JAVASCRIPT -->
+  <script>
+
+   // IMAGE FILES: update the filenames in each product's images array below.
+   // Keep image files in the same folder as index.html.
+   const animals = [
+
+  {
+    id: 1,
+    type: "cattle",
+    breed: "Lactating Cows",
+    age: "Upgrade your herd with high-quality genetics<br>✔ Producing 21–44L/day",
+    price: "KSh 120,000 – 200,000",
+    images: ["lactating-cows-1.jfif","lactating-cows-2.jfif","lactating-cows-3.jfif","lactating-cows-4.jfif"]
+  },
+
+  {
+    id: 2,
+    type: "sheep",
+    breed: "Dorper Sheep",
+    age: "Healthy breeding stock available",
+    price: "5,500 – 25,000",
+    images: ["dorper-sheep-1.jfif","dorper-sheep-2.jfif","dorper-sheep-3.jfif","dorper-sheep-4.jfif"]
+  },
+
+  {
+    id: 3,
+    type: "hay",
+    breed: "Animal Feed & Hay",
+    weight: "Lucerne, Rhodes, Silage available",
+    price: "From KSh 8 – 400",
+    images: ["one.jfif","lucerne1.jfif","cutting1.jfif","hay4.jfif"]
+  },
+
+  {
+    id: 4,
+    type: "cattle",
+    breed: "Jersey Cows",
+    age: "High butter fat milk production breed",
+    images: ["jersey-cows-1.jfif","jersey-cows-2.jfif","jersey-cows-3.jfif","jersey-cows-4.jfif"]
+  },
+
+  {
+    id: 5,
+    type: "goat",
+    breed: "Boer Goat",
+    age: "Kids to mature goats available",
+    price: "15,000 – 30,000",
+    images: ["boer-goat-1.jfif","boer-goat-2.jfif","boer-goat-3.jfif","boer-goat-4.jfif"]
+  },
+
+  {
+    id: 6,
+    type: "sheep",
+    breed: "Hampshire Sheep",
+    age: "4–12 months available",
+    price: "26,000 – 48,000",
+    images: ["hampa.jfif","hampb.jfif","hampc.jfif","hampb.jfif"]
+  },
+
+  {
+    id: 7,
+    type: "cattle",
+    breed: "Boran & Sahiwal",
+    age: "Beef cattle breeds available",
+    price: "From 25,000",
+    images: ["boran-sahiwal-1.jfif","boran-sahiwal-2.jfif","boran-sahiwal-3.jfif","boran-sahiwal-4.jfif"]
+  },
+
+  {
+    id: 8,
+    type: "goat",
+    breed: "Kalro Goats",
+    age: "Milk production goats available",
+    images: ["kalro-goats-1.jfif","kalro-goats-2.jfif","kalro-goats-3.jfif","kalro-goats-4.jfif"]
+  },
+
+  {
+    id: 9,
+    type: "cattle",
+    breed: "Girolando",
+    age: "High milk production cows",
+    price: "20,000 – 250,000",
+    images: ["girolandob.jfif","girolandoa.jfif","girolandoc.jfif","girolandoa.jfif"]
+  },
+
+  /* =========================
+     POTATOES (FIXED)
+  ========================= */
+  {
+    id: 10,
+    type: "potatoes",
+    breed: "KALRO Certified Potato Seeds",
+
+    age: `
+High-quality certified potato seeds for commercial farming.<br>
+✔ KEPHIS certified<br>
+✔ High germination<br>
+✔ Disease resistant
+    `,
+
+    weight: `
+Varieties:<br>
+Super Shangi, Dutch, Unica, Sheherekea, Stephens, Markies, Millioner<br><br>
+Delivery available countrywide
+    `,
+
+    price: `
+90kg C1 → KSh 3,700<br>
+90kg C2 → KSh 3,000<br>
+50kg C1 → KSh 2,700<br>
+50kg C2 → KSh 2,150
+    `,
+
+    images: [
+      "potatoes1.jfif",
+      "potatoes2.jfif",
+      "potatoes1.jfif",
+      "potatoes2.jfif"
+    ]
+  }
+
+]; // ✅ CLOSE ARRAY PROPERLY
+
+// Additional farm products. Add four photos per product in product-images/.
+// Name them product-name-1.jpg through product-name-4.jpg.
+const farmProducts = [
+  { name: "Turkey", slug: "turkey", imageFiles: ["turkey-1.jpg", "turkey-2.jpg", "turkey-3.jpg", "turkey-4.jpg"], price: "KSh 3,000", description: "A great choice for poultry keepers and farmers looking to raise turkeys." },
+  { name: "Goose", slug: "goose", imageFiles: ["goose-1.jpg", "goose-2.jpg", "goose-3.jpg", "goose-4.jpg"], price: "KSh 2,350", description: "Healthy geese for your farm or poultry project. Contact us for availability." },
+  { name: "Pigs", slug: "pigs", price: "KSh 7,500 – 30,000", description: "Pigs for farmers planning to start or grow a livestock project." },
+  { name: "Day-old Chicks", slug: "day-old-chicks", price: "KSh 70", description: "Start your poultry flock with day-old chicks. Ask us about availability." },
+  { name: "Seedlings", slug: "seedlings", price: "KSh 5 – 50", description: "Seedlings to help you get your planting season underway. Ask about available varieties." },
+  { name: "Duck", slug: "duck", price: "KSh 1,500", description: "Ducks for small-scale or commercial poultry keeping." },
+  { name: "Fish Fingerlings (Samaki)", slug: "fish-fingerlings", price: "Inquire on WhatsApp", variable: true, description: "Fish fingerlings for stocking your fish pond. Price depends on your requirements." },
+  { name: "Eggs (Mayai)", slug: "eggs", price: "KSh 380", description: "Eggs available in different quantities. Contact us to confirm your order." },
+  { name: "Rabbit", slug: "rabbit", price: "KSh 300 – 3,500", description: "Rabbits for farmers and anyone interested in rabbit keeping." },
+  { name: "Peacock", slug: "peacock", price: "KSh 1,500 – 20,000", description: "Ornamental peafowl available on request. Message us for current pricing and availability." },
+  { name: "Guinea Fowl", slug: "guinea-fowl", price: "KSh 140 – 3,800", description: "Guinea fowl for your poultry farm. Contact us for current prices and availability." }
+];
+
+function selectFarmProductImage(button, imageSrc) {
+  const card = button.closest('.farm-product-card');
+  const mainImage = card.querySelector('.farm-product-main-image');
+  mainImage.src = imageSrc;
+  mainImage.style.display = 'block';
+  const fallback = card.querySelector('.farm-product-fallback');
+  if (fallback) fallback.style.display = 'none';
+  card.querySelectorAll('.farm-product-thumb').forEach(thumb => {
+    thumb.classList.remove('ring-2', 'ring-green-700');
+    thumb.setAttribute('aria-pressed', 'false');
+  });
+  button.classList.add('ring-2', 'ring-green-700');
+  button.setAttribute('aria-pressed', 'true');
+}
+
+function renderFarmProducts() {
+  const productGrid = document.getElementById("farmProductsGrid");
+  if (!productGrid) return;
+  productGrid.innerHTML = farmProducts.map(product => {
+    const message = encodeURIComponent(`Hello Kalro Farm, I would like to inquire about ${product.name}${product.variable ? ' and its current price' : ''}.`);
+    const images = product.imageFiles
+      ? product.imageFiles.map(filename => `product-images/${filename}`)
+      : [1, 2, 3, 4].map(number => `product-images/${product.slug}-${number}.jpg`);
+    return `
+      <article class="animal-card farm-product-card bg-white rounded-2xl overflow-hidden shadow-xl flex flex-col">
+        <div class="product-image-wrap bg-green-50 flex items-center justify-center overflow-hidden relative">
+          <img src="${images[0]}" alt="${product.name}" loading="lazy" class="farm-product-main-image h-72 w-full object-cover cursor-pointer"
+            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+          <div class="farm-product-fallback h-72 w-full items-center justify-center flex-col text-green-900" style="display:none" aria-label="Add ${product.imageFiles ? product.imageFiles[0] : `${product.slug}-1.jpg`} here">
+            <span class="text-5xl mb-2">🌿</span><span class="font-semibold">${product.name}</span>
+            <span class="text-xs text-gray-500 mt-1">Add: ${product.imageFiles ? product.imageFiles[0] : `${product.slug}-1.jpg`}</span>
+          </div>
+        </div>
+        <div class="grid grid-cols-4 gap-2 p-3 bg-gray-100" aria-label="${product.name} image gallery">
+          ${images.map((image, index) => `
+            <button type="button" class="farm-product-thumb gallery-image h-20 rounded-lg overflow-hidden cursor-pointer focus:outline-none ${index === 0 ? 'ring-2 ring-green-700' : ''}"
+              aria-label="Show ${product.name} image ${index + 1}" aria-pressed="${index === 0 ? 'true' : 'false'}"
+              onclick="selectFarmProductImage(this, '${image}')">
+              <img src="${image}" alt="${product.name} image ${index + 1}" loading="lazy" class="h-full w-full object-cover"
+                onerror="this.style.visibility='hidden'; this.parentElement.style.background='#e5e7eb';">
+            </button>`).join("")}
+        </div>
+        <div class="p-6 flex flex-col flex-1">
+          <h3 class="text-xl font-bold text-gray-900">${product.name}</h3>
+          <p class="text-sm leading-relaxed text-gray-600 mt-2">${product.description}</p>
+          <p class="text-green-800 font-bold text-lg mt-3 mb-5">${product.price}</p>
+          <a href="https://wa.me/254762886726?text=${message}" target="_blank" rel="noopener noreferrer"
+             class="mt-auto text-center bg-green-700 hover:bg-green-600 text-white px-4 py-3 rounded-xl font-semibold transition">
+            💬 ${product.variable ? 'Inquire on WhatsApp' : 'Order on WhatsApp'}
+          </a>
+        </div>
+      </article>`;
+  }).join("");
+}
+
+// =========================
+// DOM ELEMENTS (FIXED LOCATION)
+// =========================
+const grid = document.getElementById("livestockGrid");
+const buttons = document.querySelectorAll(".filter-btn");
+    function renderAnimals(filter = "all") {
+
+      grid.innerHTML = "";
+
+      const filteredAnimals = filter === "all"
+        ? animals
+        : animals.filter(animal => animal.type === filter);
+
+      filteredAnimals.forEach(animal => {
+
+        grid.innerHTML += `
+
+          <div class="animal-card bg-white rounded-2xl overflow-hidden shadow-xl">
+
+            <!-- MAIN IMAGE -->
+            <img
+              src="${animal.images[0]}"
+              onclick="openFullscreen('${animal.images[0]}')"
+              class="h-72 w-full object-cover cursor-pointer hover:opacity-90">
+
+            <!-- 4 IMAGE GALLERY -->
+            <div class="grid grid-cols-4 gap-2 p-3 bg-gray-100">
+
+              ${animal.images.map(image => `
+
+                <img
+                  src="${image}"
+                  onclick="openFullscreen('${image}')"
+                  class="gallery-image h-20 w-full object-cover rounded-lg cursor-pointer">
+
+              `).join("")}
+
+            </div>
+
+
+            <!-- CONTENT -->
+            <div class="p-6">
+
+              <span class="uppercase text-sm text-green-700 font-bold">
+                ${animal.type}
+              </span>
+
+              <h3 class="text-3xl font-bold mt-2 mb-4">
+                ${animal.breed}
+              </h3>
+
+              <div class="space-y-2 text-gray-600">
+
+                <p>
+                  <strong>Age:</strong> ${animal.age}
+                </p>
+
+                <p>
+                  <strong>Weight:</strong> ${animal.weight}
+                </p>
+
+              </div>
+
+              <div class="mt-6 flex justify-between items-center">
+
+                <span class="text-3xl font-bold text-green-800">
+                  ${animal.price}
+                </span>
+
+
+
+                <button>
+                  
+<a
+  href="https://wa.me/254762886726?text=Hello%20Kalro%20Farm,%20I%20am%20interested%20in%20this%20livestock."
+  target="_blank"
+  rel="noopener noreferrer"
+  class="bg-green-700 hover:bg-green-600 text-white px-5 py-3 rounded-xl font-semibold inline-block"
+  aria-label="Contact Kalro Farm on WhatsApp"
+>
+  Inquire
+</a>           
+                </button>
+
+              </div>
+
+            </div>
+            <style>
+
+                      .container {
+        max-width: 1100px;
+        margin: 40px auto;
+        display: flex;
+        gap: 30px;
+        align-items: flex-start;
+      }
+     .list {
+        background: #c9f8de;
+        padding: 10px;
+        border-radius: 6px;
+      }
+    
+      .item {
+        display: flex;
+        justify-content: space-between;
+        padding: 8px 10px;
+        color: black;
+        border-bottom: 1px solid #b5c4bd;
+        font-size: 14px;
+      }
+    
+      .item:last-child {
+        border-bottom: none;
+      }
+    
+      .price {
+        color: #2f5e3b;
+        font-weight: bold;
+      }
+    
+      .button {
+        margin-top: 15px;
+        text-align: center;
+      }
+    
+      .button a {
+        display: inline-block;
+        width: 100%;
+        padding: 10px;
+        background-color: #5bb4c4;
+        color: black;
+        text-decoration: none;
+        border-radius: 6px;
+        font-size: 14px;
+      }
+    
+      .button a:hover {
+        background-color: #5b8ec0;
+      }
+
+      
+                </style>
+     
+          </div>
+          
+
+        `;
+      });
+
+    }
+
+    buttons.forEach(button => {
+
+      button.addEventListener("click", () => {
+
+        buttons.forEach(btn => btn.classList.remove("active"));
+
+        button.classList.add("active");
+
+        renderAnimals(button.dataset.filter);
+
+      });
+
+    });
+
+    function openFullscreen(imageSrc) {
+
+      const viewer = document.createElement("div");
+
+      viewer.className =
+        "fixed inset-0 bg-black/95 flex items-center justify-center z-50";
+
+      viewer.innerHTML = `
+
+        <div class="relative w-full h-full flex items-center justify-center">
+
+          <button
+            onclick="this.parentElement.parentElement.remove()"
+            class="absolute top-6 right-8 text-white text-6xl font-bold hover:text-red-400">
+            &times;
+          </button>
+
+          <img
+            src="${imageSrc}"
+            class="max-h-[90%] max-w-[90%] rounded-2xl shadow-2xl">
+
+        </div>
+
+      `;
+
+      document.body.appendChild(viewer);
+
+    }
+
+    renderAnimals();
+    renderFarmProducts();
+
+  </script>
+
+</body>
+</html>
